@@ -35,7 +35,7 @@ def histogram_boxplot(data, feature, figsize=(12, 7), kde=False, bins=None):
 # calling this function
 histogram_boxplot(data, "column_name", kde=True, figsize=(8, 4))
 
-*********************************************************************************************************************************
+**************************************************************************************************************************
 
 # function to create labeled barplots
 
@@ -92,6 +92,7 @@ def labeled_barplot(data, feature, perc=False, n=None):
 labeled_barplot(data, "column_name", perc=True)
     
 **************************************************************************************************************************
+
 # Creating a correlation plot
 
 plt.figure(figsize=(15, 7))
