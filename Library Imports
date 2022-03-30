@@ -1,13 +1,255 @@
-# For Supervised Learning:Regression problems
+# FOR SUPERVISED LEARNING:REGRESSION PROBLEMS
+    %load_ext nb_black
+    %matplotlib inline
 
+    # Libraries to help with reading and manipulating data
+    import numpy as np
+    import pandas as pd
 
-# For Supervised Learning:Classification problems
+    # Libraries to help with data visualization
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
+    sns.set()
 
-# For Supervised Learning with Ensemble Techniques
+    # Removes the limit for the number of displayed columns
+    pd.set_option("display.max_columns", None)
+    # Sets the limit for the number of displayed rows
+    pd.set_option("display.max_rows", 200)
 
+    # to split the data into train and test
+    from sklearn.model_selection import train_test_split
 
-# For Supervised Learning with Advanced Techniques
+    # to build linear regression_model
+    from sklearn.linear_model import LinearRegression
 
+    # to check model performance
+    from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-# For Unsupervised Learning
+    # to suppress warnings
+    import warnings
+
+    warnings.filterwarnings("ignore")
+
+# FOR SUPERVISED LEARNING:CLASSIFICATION PROBLEMS
+    %load_ext nb_black
+    %matplotlib inline
+
+    # Libraries to help with reading and manipulating data
+    import numpy as np
+    import pandas as pd
+
+    # Libraries to help with data visualization
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    sns.set()
+
+    # Removes the limit for the number of displayed columns
+    pd.set_option("display.max_columns", None)
+    # Sets the limit for the number of displayed rows
+    pd.set_option("display.max_rows", 200)
+
+    # to split the data into train and test
+    from sklearn.model_selection import train_test_split
+
+    # Libraries to build logistic regression model
+    from sklearn.linear_model import LogisticRegression
+
+    # Libraries to build decision tree classifier
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn import tree
+
+    # To tune models
+    from sklearn.model_selection import GridSearchCV
+
+    # To get different metric scores
+    from sklearn import metrics
+    from sklearn.metrics import (
+        f1_score,
+        accuracy_score,
+        recall_score,
+        precision_score,
+        confusion_matrix,
+        roc_auc_score,
+        plot_confusion_matrix,
+        precision_recall_curve,
+        roc_curve,
+        make_scorer,
+    )
+
+    # to suppress warnings
+    import warnings
+
+    warnings.filterwarnings("ignore")
+
+# FOR SUPERVISED LEARNING:CLASSIFICATION PROBLEMS WITH ENSEMBLE TECHNIQUES
+    # Standard warning filter import.
+    import warnings
+    warnings.filterwarnings("ignore")
+
+    # Importing the standard libraries.
+    import numpy as np   
+    import pandas as pd    
+    import seaborn as sns
+    sns.set()
+    # Removes the limit for the number of displayed columns.
+    pd.set_option("display.max_columns", None)
+    # Sets the limit for the number of displayed rows.
+    pd.set_option("display.max_rows", 150)
+    import matplotlib.pyplot as plt
+    %matplotlib inline
+    import scipy.stats as stats
+
+    # Importing the main modeling libraries used to date.
+    from sklearn import metrics
+    from sklearn import model_selection
+    from sklearn import tree
+    from sklearn import ensemble
+    from sklearn.linear_model import LogisticRegression
+
+    # Importing the scoring metrics, not all will be used.
+    from sklearn.metrics import (
+        f1_score,
+        accuracy_score,
+        recall_score,
+        precision_score,
+        confusion_matrix,
+        roc_auc_score,
+        plot_confusion_matrix,
+        precision_recall_curve,
+        roc_curve,
+        make_scorer,
+        classification_report,
+    )
+
+    # Importing the model selection tools used to date.
+    from sklearn.model_selection import GridSearchCV, train_test_split
+
+    # Importing the Classifier versions of models learned to date.
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.ensemble import BaggingClassifier, RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier, StackingClassifier
+
+    # Importing the Regression versions of the models learned to date, will likely not be used for this project.
+    #from sklearn.tree import DecisionTreeRegressor
+    #from sklearn.ensemble import BaggingRegressor,RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor, StackingRegressor
+
+    # Importing xgboost models.
+    from xgboost import XGBRegressor, XGBClassifier
+
+# FOR SUPERVISED LEARNING:CLASSIFICATION PROBLEMS WITH ADVANCED TECHNIQUES
+    # magic line timer %%time
+
+    # To help with reading and manipulating data
+    import pandas as pd
+    import numpy as np
+
+    # To help with data visualization
+    %matplotlib inline
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    # To be used for missing value imputation
+    from sklearn.impute import (
+        SimpleImputer,
+        KNNImputer,
+    )
+
+    # To help with model building
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.ensemble import (
+        AdaBoostClassifier,
+        GradientBoostingClassifier,
+        RandomForestClassifier,
+        BaggingClassifier,
+    )
+    from xgboost import XGBClassifier
+
+    # To get different metric scores, and split data
+    from sklearn import metrics
+    from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+    from sklearn.metrics import (
+        f1_score,
+        accuracy_score,
+        recall_score,
+        precision_score,
+        confusion_matrix,
+        roc_auc_score,
+        plot_confusion_matrix,
+        r2_score,
+    )
+
+    # To be used for data scaling and one hot encoding
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler, OneHotEncoder
+
+    # To be used for tuning the model
+    from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
+
+    # To be used for creating pipelines and personalizing them
+    from sklearn.pipeline import Pipeline
+    from sklearn.compose import ColumnTransformer
+
+    # To define maximum number of columns to be displayed in a dataframe
+    pd.set_option("display.max_columns", None)
+
+    # To supress scientific notations for a dataframe
+    pd.set_option("display.float_format", lambda x: "%.3f" % x)
+
+    # To supress warnings
+    import warnings
+
+    warnings.filterwarnings("ignore")
+
+    # This will help in making the Python code more structured automatically (good coding practice)
+    %load_ext nb_black
+
+    # For over- and undersampling the data
+    from imblearn.over_sampling import SMOTE
+    from imblearn.under_sampling import RandomUnderSampler
+
+    # Incase I decide to play with these
+    from sklearn.linear_model import Ridge
+    from sklearn.linear_model import Lasso
+
+# FOR UNSUPERVISED LEARNING
+    # this will help in making the Python code more structured automatically (good coding practice)
+    %load_ext nb_black
+
+    # To supress warnings
+    import warnings
+
+    warnings.filterwarnings("ignore")
+
+    # Libraries to help with reading and manipulating data
+    import numpy as np
+    import pandas as pd
+
+    # Libraries to help with data visualization
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    # Removes the limit for the number of displayed columns
+    pd.set_option("display.max_columns", None)
+    # Sets the limit for the number of displayed rows
+    pd.set_option("display.max_rows", 200)
+
+    # to scale the data using z-score
+    from sklearn.preprocessing import StandardScaler
+
+    # to compute distances
+    from scipy.spatial.distance import cdist, pdist
+
+    # to perform k-means clustering and compute silhouette scores
+    from sklearn.cluster import KMeans
+    from sklearn.metrics import silhouette_score
+
+    # to visualize the elbow curve and silhouette scores
+    from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
+
+    # to perform hierarchical clustering, compute cophenetic correlation, and create dendrograms
+    from sklearn.cluster import AgglomerativeClustering
+    from scipy.cluster.hierarchy import dendrogram, linkage, cophenet
+
+    # to perform PCA
+    from sklearn.decomposition import PCA
