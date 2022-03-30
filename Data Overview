@@ -1,0 +1,42 @@
+# IMPORTING A CSV FILE
+original_data = pd.read_csv("file_name.csv")
+
+# IMPORTING AN EXCEL FILE
+original_data = pd.read_excel("file_name.xlsx")
+original_data = pd.read_excel("file_name.xlsx", sheet_name="sheet_name")
+
+
+# GENERAL/GOOD PRACTICE LOOKING AT DATA
+# Making a copy to avoid corrupting the original data set
+data = original_data.copy()
+
+# Getting a one line report of the data structure.
+print(f"There are {data.shape[0]} rows and {data.shape[1]} columns.")
+
+# Looking at samples of the data.
+data.head()
+data.tail()
+data.sample(25, random_state=2)
+
+# checking data types
+data.info()
+
+# Checking for duplicated rows.
+data.duplicated().sum()
+
+# Verifying that there are no missing values
+data.isnull().sum().sort_values(ascending=False)
+
+# Checking the number of unique data points in each column
+data.nunique()
+
+# Summary of columns.
+cat_cols = [
+    "column_name/s",
+]
+
+for column in cat_cols:
+    print(data[column].value_counts())
+    print("-" * 80)
+    
+data.describe().T
